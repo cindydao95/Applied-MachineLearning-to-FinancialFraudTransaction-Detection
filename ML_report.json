@@ -43,5 +43,28 @@
             "precision_score_test": 0.7758628064881903,
             "running_time_(min)": "2323m 5.2s",
             "running_time_(hours)": "38 hours"
-      }
-}
+      },
+      "DT": {"macro_f1_folds": [
+                  0.860250840588686, 
+                  0.8619035983220538, 
+                  0.8614868207905849, 
+                  0.8604588286882431, 
+                  0.8602171599185503], 
+            "accuracy_test": 0.7803235697987755, 
+            "macro_f1_test": 0.7784857064490822, 
+            "recall_score_test": 0.7803235697987755, 
+            "precision_score_test": 0.7899460872181813, 
+            "running_time_(min)": "962m 20s", 
+            "running_time_(hours)": "16 hours"},
+      "gaussian": {"macro_f1_folds": [
+                  0.43360002750958826, 
+                  0.4332923464078215, 
+                  0.43242043122673074, 
+                  0.4319759869777908, 
+                  0.43330418027258566], 
+            "accuracy_test": 0.5458201265783578, 
+            "macro_f1_test": 0.43253748913170365, 
+            "recall_score_test": 0.5458201265783578,
+            "precision_score_test": 0.7274185086170489, 
+            "running_time_(min)": "1011m 40s", 
+            "running_time_(hours)": "16.85 hours"}}
