@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Predict the Financial Transaction Fraud Based on JPMorgan Chase dataset</h1>
+    <h1>Cindy Dao, ITDS Department, University of North Texas</h1>
+    <h1>Advisor: Prof.Sameh Shamroukh</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+      <input type="text" name="Sender_Type" placeholder="Sender_Type" required="required" /><br>
+    	<input type="text" name="Sender_Country" placeholder="Sender_Country" required="required" /><br>
+        <input type="text" name="Bene_Type" placeholder="Bene_Type" required="required" /><br>
+        <input type="text" name="Bene_Country" placeholder="Bene_Country" required="required" /><br>
+        <input type="text" name="USD_Amount" placeholder="USD_Amount" required="required" /><br>
+        <input type="text" name="Transaction_Type" placeholder="Transaction_Type" required="required" /><br>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+
+</div>
+{{prediction_text}}
+
+</body>
+</html>
