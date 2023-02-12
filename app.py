@@ -51,7 +51,7 @@ def predict():
         output = "Fraud"
     else:
         output = "Non-Fraud"
-    return render_template("home.html",prediction_text="The transaction is predited to be {} based Machine Learning model built by Cindy Dao.".format(output))
+    return render_template("home.html",prediction_text=f"{output}")
 if __name__ == "__main__":
     app.run(debug=True)
 
