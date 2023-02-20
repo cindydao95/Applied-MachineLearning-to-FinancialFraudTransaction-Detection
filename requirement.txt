@@ -1,8 +1,0 @@
-pickle5
-Flask
-matplotlib
-pandas
-seaborn
-sklearn
-imblearn
-gunicorn
