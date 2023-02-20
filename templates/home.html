@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>ML API</title>
+  <title>Financial Transaction Fraud Detection</title>
   <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
@@ -20,22 +20,89 @@
 
      <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict')}}"method="post">
-      <input type="text" name="Sender_Type" placeholder="Sender_Type" required="required" /><br> 
-      <p>Enter EXACT one of the following sennder type. It is the type of sender's card.</p> 
-      <p>Ex: jpmc client, client, company, jpmc company, bill company.</p>
-    	<input type="text" name="Sender_Country" placeholder="Sender_Country" required="required" /><br> 
-      <p>Enter EXACT one of the countries below. If there are no countries found, enter "other" </p>
-      <p>Ex: usa, canada, germany, mozambique, el salvador, guam, south sudan, italy, sao tome principe, liechtenstein, thailand, french guiana, kuwait, mauritania, jamaika, georgia</p>
-        <input type="text" name="Bene_Type" placeholder="Bene_Type" required="required" /><br>
-        <p>Enter EXACT one of the following bene types. It is the type of bene's card.</p> 
-        <p>Ex: jpmc client, client, company, jpmc company, bill company.</p> 
-        <input type="text" name="Bene_Country" placeholder="Bene_Country" required="required" /><br>
-        <p>Enter EXACT one of the countries below. If there are no countries found, enter "other" </p>
-        <p>usa, canada, germany, brazil, south sudan, mozambique, moldova, cocos keeling is, macau, gambia, cayman islands, russian, uruguay, jamaica, bulgaria, french polynesia</p>
+      <div>
+        <label for="Sender_Type">Select type of Sender: </label>
+          <select name="Sender_Type">
+            <option>jpmc client</option>
+            <option>client</option>
+            <option>company</option>
+            <option>jpmc company</option>
+            <option>bill company</option>
+          </select>
+      </div><br>
+        <div>
+          <label for="countries">Select Country Where Money is Transferred From:</label>
+          <select id="countries" name="Sender_Country">
+            <option value="usa">usa</option>
+            <option value="canada">canada</option>
+            <option value="germany">germany</option>
+            <option value="mozambique">mozambique</option>
+            <option value="el_salvador">el_salvador</option>
+            <option value="guam">guam</option>
+            <option value="south_sudan">south_sudan</option>
+            <option value="italy">Italy</option>
+            <option value="sao_tome_principe">sao_tome_principe</option>
+            <option value="liechtenstein">liechtenstein</option>
+            <option value="thailand">thailand</option>
+            <option value="french_guiana">french_guiana</option>
+            <option value="kuwait">kuwait</option>
+            <option value="mauritania">mauritania</option>
+            <option value="jamaika">jamaica</option>
+            <option value="georgia">georgia</option>
+            <option value="other">other</option>
+          </select>
+        </div><br>
+      <div>
+        <label for="bene_type">Select type of beneficiary: </label>
+        <select name ="Bene_Type">
+          <option>jpmc client</option>
+          <option>client</option>
+          <option>company</option>
+          <option>jpmc company</option>
+          <option>bill company</option>
+        </select>
+      </div><br>
+      <div>
+        <label for="bene_countries">Select Country Where Money is Transferred To:</label>
+        <select name="Bene_Country">
+          <option value="usa">usa</option>
+          <option value="canada">canada</option>
+          <option value="germany">germany</option>
+          <option value="brazil">brazil</option>
+          <option value="south sudan">south Sudan</option>
+          <option value="mozambique">mozambique</option>
+          <option value="moldova">moldova</option>
+          <option value="cocos keeling is">cocos keeling is</option>
+          <option value="macau">macau</option>
+          <option value="gambia">gambia</option>
+          <option value="cayman islands">cayman islands</option>
+          <option value="russian">russian</option>
+          <option value="uruguay">uruguay</option>
+          <option value="jamaica">jamaica</option>
+          <option value="bulgaria">bulgaria</option>
+          <option value="french polynesia">french polynesia</option>
+          <option value="other">other</option>
+        </select>
+      </div><br>
+      <div>
+        <label>Enter Amount of USD being transfered</label>
         <input type="text" name="USD_Amount" placeholder="USD_Amount" required="required" /><br>
         <p>Enter number in term of dollars. Note: no $ or any symbols, only numbers. Ex: 30000, 100, 200</p>
-        <input type="text" name="Transaction_Type" placeholder="Transaction_Type" required="required" /><br>
-        <p>Enter EXACT one of the following transaction types: quick payment, make payment, pay check, move fund, deposit cash, withdrawal, exchange, deposit check</p>
+      </div>
+      
+      <div>
+        <label>Select Type of Transaction: </label>
+        <select name = "Transaction_Type">
+          <option>quick payment</option>
+          <option>make payment</option>
+          <option>pay check</option>
+          <option>move fund</option>
+          <option>deposit cash</option>
+          <option>exchange</option>
+          <option>withdrawal</option>
+          <option>deposit check</option>
+        </select>
+      </div>
         <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
         
     </form>
